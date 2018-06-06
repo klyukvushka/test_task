@@ -2,757 +2,740 @@
 @import "normalize";
 @import "mixins";
 
-
 html {
-	box-sizing: border-box;
-	-ms-overflow-style: scrollbar;
-  }
-  
-  *,
-  *::before,
-  *::after {
-	box-sizing: inherit;
-  }
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
-body{
-    font-family: 'Vida 31 Pro';
-    font-size: 14px;
+body {
+  font-family: "Vida 31 Pro";
+  font-size: 14px;
 }
 .desktop {
-    @include tablet {
-        display: none;
-    }
-    @include phone {
-        display: none;
-    }
+  @include tablet {
+    display: none;
+  }
+  @include phone {
+    display: none;
+  }
 }
 .tablet {
-    @include desktop {
-        display: none;
-    }
-    @include phone {
-        display: none;
-    }
+  @include desktop {
+    display: none;
+  }
+  @include phone {
+    display: none;
+  }
 }
 .mobile {
-    @include desktop {
-        display: none;
-    }
-    @include tablet {
-        display: none;
-    }
+  @include desktop {
+    display: none;
+  }
+  @include tablet {
+    display: none;
+  }
 }
 
-
-
-
 .container {
-    max-width: 1200px;
-    width: 100%;
-    margin: $margin;
-    @include phone {
-        padding: 0 25px;
-    }
+  max-width: 1200px;
+  width: 100%;
+  margin: $margin;
+  @include phone {
+    padding: 0 25px;
+  }
 }
 
 .button {
-    text-decoration: none;
-    color: #53565a;
-    border: 1px solid $border-btn;
-    border-radius: 30px;
+  text-decoration: none;
+  color: #53565a;
+  border: 1px solid $border-btn;
+  border-radius: 30px;
 }
 
 .mark {
-    color: #fff;
-    background-color: $accent;
-    border-radius: 50%;
-    padding: 2px 5px;
-    font-size: 11px;
-    position: absolute;
-    font-weight: bold;
+  color: #fff;
+  background-color: $accent;
+  border-radius: 50%;
+  padding: 2px 5px;
+  font-size: 11px;
+  position: absolute;
+  font-weight: bold;
 }
 
 .header-top {
-    &__container {
-        @extend .container;
-        max-width: 1300px;
-        padding: 16px 35px 8px 39px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        @include tablet {
-            max-width: 991px;
-            width: 100%;
-            position: relative;
-            padding: 15px 20px 8px;
-        }
-        @include phone {
-            position: absolute;
-            top: 0;
-            padding: 15px 20px 8px;
-        }
+  &__container {
+    @extend .container;
+    max-width: 1300px;
+    padding: 16px 35px 8px 39px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include tablet {
+      max-width: 991px;
+      width: 100%;
+      position: relative;
+      padding: 15px 20px 8px;
     }
-    &__logo {
-        @include phone {
-        width: 100px;
-        }
+    @include phone {
+      position: absolute;
+      top: 0;
+      padding: 15px 20px 8px;
     }
-    &__content {
-        width: 603px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        &_second {
-            width: 520px;
-            @include tablet {
-                width: auto;
-            }
-            @include phone  {
-                width: 205px;
-            }
-        }
+  }
+  &__logo {
+    @include phone {
+      width: 100px;
     }
+  }
+  &__content {
+    width: 603px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_second {
+      width: 520px;
+      @include tablet {
+        width: auto;
+      }
+      @include phone {
+        width: 205px;
+      }
+    }
+  }
 }
 .header {
-    &__menu {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        width: 437px;
-        display: flex;
-        justify-content: space-between;
-        @include tablet {
-            display: none;
-        }
-        @include phone {
-            display: none;
-        }
+  &__menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 437px;
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      display: none;
     }
+    @include phone {
+      display: none;
+    }
+  }
 }
 .menu {
-    &__link {
-        text-decoration: none;
-        color: $accent;
-    }
+  &__link {
+    text-decoration: none;
+    color: $accent;
+  }
 }
 
 .comprassion {
-    display: flex;
-    align-items: center;
-    position: relative;
-    &__link {
-        text-decoration: none;
-        color: $accent;
-    }
-    @include tablet {
-        display: none;
-    }
-    @include phone {
-        display: none;
-    }
+  display: flex;
+  align-items: center;
+  position: relative;
+  &__link {
+    text-decoration: none;
+    color: $accent;
+  }
+  @include tablet {
+    display: none;
+  }
+  @include phone {
+    display: none;
+  }
 }
 
 .block {
-    &__icon {
-        margin-right: 10px;
-    }
-    &__mark {
-        top: -11px;
-        left: 8px;
-    }
+  &__icon {
+    margin-right: 10px;
+  }
+  &__mark {
+    top: -11px;
+    left: 8px;
+  }
 }
 
 .cabinet {
-    padding: 7px 15px;
-    &__icon {
-        margin-left: 10px;
-    }
-    @include tablet {
-        display: none;
-    }
-    @include phone {
-        display: none;
-    }
+  padding: 7px 15px;
+  &__icon {
+    margin-left: 10px;
+  }
+  @include tablet {
+    display: none;
+  }
+  @include phone {
+    display: none;
+  }
 }
 
 .phone {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 239px;
-    &__number {
-        font-family: "Vida 33 Pro";
-        font-size: 18px;
-        color: #565f66;
-        @include phone {
-            font-size: 14px;
-        }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 239px;
+  &__number {
+    font-family: "Vida 33 Pro";
+    font-size: 18px;
+    color: #565f66;
+    @include phone {
+      font-size: 14px;
     }
-    &__icon {
-        @include phone {
-            width: 43px;
-        }
+  }
+  &__icon {
+    @include phone {
+      width: 43px;
     }
-    @include tablet {
-        width: 300px;
-    }
+  }
+  @include tablet {
+    width: 300px;
+  }
 }
 
 .header-bottom {
-    // width: 100%;
-    // height: 232px;
-    // background: url(../images/bg_desktop.jpg), no-repeat;
-    // background-size: cover;
-    &__banner {
-        width: 100%;
-        @include phone {
-            border-top : 1px solid #679edd;
-        }
-    }
-    &__wrapper {
-        max-width: 1400px;
-        margin: $margin;
-        position: relative;
-        height: 0;
-    }
-    &__content {
-        font-family: "Vida 33 Pro";
-        position: absolute;
-        left: 6%;
-        bottom: 0;
-    }
-   
+  // width: 100%;
+  // height: 232px;
+  // background: url(../images/bg_desktop.jpg), no-repeat;
+  // background-size: cover;
+  &__banner {
+    width: 100%;
     @include phone {
-        margin-top: 65px;
+      border-top: 1px solid #679edd;
     }
-    
+  }
+  &__wrapper {
+    max-width: 1400px;
+    margin: $margin;
+    position: relative;
+    height: 0;
+  }
+  &__content {
+    font-family: "Vida 33 Pro";
+    position: absolute;
+    left: 6%;
+    bottom: 0;
+  }
+
+  @include phone {
+    margin-top: 65px;
+  }
 }
 .adress {
-    width: 142px;
-    color: #777b80;
-    padding: 10px 25px 0px 25px;
-    background-color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    @include tablet {
-        font-size: 15px;
-        width: 127px;
-    }
-    @include phone {
-        display: none;
-    }
+  width: 142px;
+  color: #777b80;
+  padding: 10px 25px 0px 25px;
+  background-color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  @include tablet {
+    font-size: 15px;
+    width: 127px;
+  }
+  @include phone {
+    display: none;
+  }
 }
 .object {
-    font-size: 44px;
-    background-color: #fff;
-    padding: 7px 31px 8px 20px;
-    color: #414141;
-    font-weight: bold;
-    margin-top: -1px;
-    @include tablet {
-        
-        font-size: 31px;
-    }
-    @include phone {
-        display: none;
-    }
-    }
-// mobile-menu decoration 
+  font-size: 44px;
+  background-color: #fff;
+  padding: 7px 31px 8px 20px;
+  color: #414141;
+  font-weight: bold;
+  margin-top: -1px;
+  @include tablet {
+    font-size: 31px;
+  }
+  @include phone {
+    display: none;
+  }
+}
+// mobile-menu decoration
 .mobile-menu {
-    background-color: #fff;
-    z-index: 3;
-    position: absolute;
-    font-size: 19px;
-    top: 0;
-    right: 0;
-    max-width: 389px;
-    width: 100%;
-    padding: 28px 21px 30px;
-    border-bottom: 1px solid $border;
-    &__logo {
-        width: 120px;
-        @include phone {
-            width: 100px;
-        }
-    }
-    &__links {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    &__link {
-        @include desktop {
-            display: none;
-        }
-    }
-    &__list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        padding-top: 22px;
-    }
-    &__thumbnail {
-        width: 20px;
-    }
-    @include desktop {
-        display: none !important;
-    }
+  background-color: #fff;
+  z-index: 3;
+  position: absolute;
+  font-size: 19px;
+  top: 0;
+  right: 0;
+  max-width: 389px;
+  width: 100%;
+  padding: 28px 21px 30px;
+  border-bottom: 1px solid $border;
+  &__logo {
+    width: 120px;
     @include phone {
-        font-size: 16px;
+      width: 100px;
     }
-    
+  }
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__link {
+    @include desktop {
+      display: none;
+    }
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-top: 22px;
+  }
+  &__thumbnail {
+    width: 20px;
+  }
+  @include desktop {
+    display: none !important;
+  }
+  @include phone {
+    font-size: 16px;
+  }
 }
 .panel {
-    &__item {
-        margin-bottom: 8px;
-    }
-    &__link {
-        text-decoration: none;
-        color: $accent;
-        line-height: 2;
-    }
-}
-.mobile-comprassion {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    &__link {
-        text-decoration: none;
-        color: $accent;
-        }
-}
-.group {
-    position: relative;
-    flex-basis: 46px;
-    &__mark {
-        color: #fff;
-        background-color: $accent;
-        border-radius: 50%;
-        padding: 3px 6px;
-        font-size: 11px;
-        position: absolute;
-        font-weight: 700;
-        top: -13px;
-        left: 12px;
-    }
-    &__icon {
-        width: 20px;
-    }
-}
-.mobile-cabinet {
+  &__item {
+    margin-bottom: 8px;
+  }
+  &__link {
     text-decoration: none;
     color: $accent;
-    display: inline-block;
-    line-height: 4.6;
+    line-height: 2;
+  }
+}
+.mobile-comprassion {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  &__link {
+    text-decoration: none;
+    color: $accent;
+  }
+}
+.group {
+  position: relative;
+  flex-basis: 46px;
+  &__mark {
+    color: #fff;
+    background-color: $accent;
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 11px;
+    position: absolute;
+    font-weight: 700;
+    top: -13px;
+    left: 12px;
+  }
+  &__icon {
+    width: 20px;
+  }
+}
+.mobile-cabinet {
+  text-decoration: none;
+  color: $accent;
+  display: inline-block;
+  line-height: 4.6;
 }
 .mobile-phone {
-    max-width: 447px;
-    width: 100%;
-    padding-top: 13px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    &__number {
-        margin: 0;
-        color: #565f66;
-        font-family: "Vida 33 Pro";
-        font-size: 24px;
-    }
-    &__icon {
-        width: 55px;
-    }
+  max-width: 447px;
+  width: 100%;
+  padding-top: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__number {
+    margin: 0;
+    color: #565f66;
+    font-family: "Vida 33 Pro";
+    font-size: 24px;
+  }
+  &__icon {
+    width: 55px;
+  }
 }
 
-
-
 .wrapper {
-    @extend .container;
-    max-width: 1280px;
-    padding: 60px 40px 50px 0;
-    display: flex;
-    justify-content: space-between;
-    @include tablet {
-        flex-direction: column;
-        padding: 40px 25px 30px;
-    }
-    @include phone {
-        flex-direction: column;
-        padding: 40px 25px 30px;
-        width: auto;
-    }
+  @extend .container;
+  max-width: 1280px;
+  padding: 60px 40px 50px 0;
+  display: flex;
+  justify-content: space-between;
+  @include tablet {
+    flex-direction: column;
+    padding: 40px 25px 30px;
+  }
+  @include phone {
+    flex-direction: column;
+    padding: 40px 25px 30px;
+    width: auto;
+  }
 }
 
 .sidebar {
-    max-width: 350px;
-    width: 100%;
-    margin-left: 50px;
+  max-width: 350px;
+  width: 100%;
+  margin-left: 50px;
+  @include tablet {
+    margin: 0;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  @include phone {
+    max-width: 100%;
+    margin: 0;
+  }
+  &__list {
+    padding: 0 8px 12px 42px;
     @include tablet {
-        margin: 0;
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
+      display: none;
     }
     @include phone {
-        max-width: 100%;
-        margin: 0;
+      display: none;
     }
-    &__list {
-        padding: 0 8px 12px 42px;
-        @include tablet {
-            display: none;
-        }
-        @include phone {
-            display: none;
-        }
+  }
+  &__adresses {
+    padding: 45px 0 0 47px;
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 0 0 0;
+      max-width: 751px;
+      width: 100%;
+      margin: 0 auto;
     }
-    &__adresses {
-        padding: 45px 0 0 47px;
-        @include tablet {
-            display: flex;
-            justify-content: space-between;
-            padding: 30px 0 0 0;
-            max-width: 751px;
-            width: 100%;
-            margin: 0 auto;
-
-        }
-        @include phone {
-            display: flex;
-            justify-content: space-between;
-            padding: 0;
-            margin: $margin;
-            max-width: 463px;
-            padding-top: 30px;
-        }
-
+    @include phone {
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      margin: $margin;
+      max-width: 463px;
+      padding-top: 30px;
     }
+  }
 }
 .list {
-    &__items {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-    }
-    &__link {
-        text-decoration: none;
-        font-size: 16px;
-        color: $accent;
-        line-height: 3.5;
-    }
+  &__items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  &__link {
+    text-decoration: none;
+    font-size: 16px;
+    color: $accent;
+    line-height: 3.5;
+  }
 }
 
 .notification {
-    padding-left: 26px;
-    position: relative;
-    &__button {
-        display: inline-block;
-        max-width: 281px;
-        width: 100%;
-        padding: 10px 19px;
-        @include tablet {
-            margin: $margin;
-            max-width: 630px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        @include phone {
-            max-width: 460px;
-        }
-    }
-    &__mark {
-        position: absolute;
-        top: -7px;
-        right: 56px;
-        @include tablet {
-            right: auto;
-            left: 110px;
-        }
-        @include phone {
-            right: 15px;
-        }
-    }
+  padding-left: 26px;
+  position: relative;
+  &__button {
+    display: inline-block;
+    max-width: 281px;
+    width: 100%;
+    padding: 10px 19px;
     @include tablet {
-        padding: 0;
-        max-width: 700px;
-        width: 100%;
-        margin: 0 auto;
+      margin: $margin;
+      max-width: 630px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     @include phone {
-        padding: 0;
-        max-width: 465px;
-        margin: 0 auto;
+      max-width: 460px;
     }
+  }
+  &__mark {
+    position: absolute;
+    top: -7px;
+    right: 56px;
+    @include tablet {
+      right: auto;
+      left: 110px;
+    }
+    @include phone {
+      right: 15px;
+    }
+  }
+  @include tablet {
+    padding: 0;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  @include phone {
+    padding: 0;
+    max-width: 465px;
+    margin: 0 auto;
+  }
 }
 
 .example {
-    
-    &__adress {
-        border-top: 1px solid $border;
-        @include tablet {
-           border: none;
-           max-width: 300px;
-           width: 100%;
-        }
-        @include phone {
-            border: none;
-            max-width: 150px;
-            width: 100%
-        }
-   
+  &__adress {
+    border-top: 1px solid $border;
+    @include tablet {
+      border: none;
+      max-width: 300px;
+      width: 100%;
     }
-    &__title {
-        font-family: "Vida 33 Pro";
-        font-size: 24px;
-        color: $accent;
-        @include tablet {
-            margin-top: 0;
-        }
-        @include phone {
-            margin: 0;
-            font-size: 16px;
-        }
+    @include phone {
+      border: none;
+      max-width: 150px;
+      width: 100%;
     }
-    &__description {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  }
+  &__title {
+    font-family: "Vida 33 Pro";
+    font-size: 24px;
+    color: $accent;
+    @include tablet {
+      margin-top: 0;
     }
-    &__transit {
-        display: flex;
-        align-items: center;
+    @include phone {
+      margin: 0;
+      font-size: 16px;
     }
-    &__text {
-        font-size: 16px;
-        @include phone {
-            font-size: 13px;
-        }
+  }
+  &__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__transit {
+    display: flex;
+    align-items: center;
+  }
+  &__text {
+    font-size: 16px;
+    @include phone {
+      font-size: 13px;
     }
-    &__border {
-        border-left: 2px solid $border;
-        @include desktop {
-            display: none;
-        }
+  }
+  &__border {
+    border-left: 2px solid $border;
+    @include desktop {
+      display: none;
     }
+  }
 }
 .ref {
-    &__link {
-        text-decoration: none;
-        color: $accent;
-        font-family: "Vida 33 Pro";
-        padding-right: 10px;
-        @include phone {
-            font-size: 13px;
-        }
+  &__link {
+    text-decoration: none;
+    color: $accent;
+    font-family: "Vida 33 Pro";
+    padding-right: 10px;
+    @include phone {
+      font-size: 13px;
     }
-    &__thumb {
-        @include phone {
-            width: 16px;
-        }
+  }
+  &__thumb {
+    @include phone {
+      width: 16px;
     }
+  }
 }
 
 .notice {
-    max-width: 805px;
-    padding-left: 48px;
-    padding-bottom: 60px;
-    border-left: 1px solid $border;
-    &__title {
-        margin: 0 0 48px 0;
-        font-family: "Vida 33 Pro";
-        font-size: 36px;
-        color: #414141;
-        @include tablet {
-            font-size: 33px;
-        }
-        @include phone {
-            font-size: 29px;
-            margin-bottom: 22px;
-        }
-    }
-    // &__item {
-    //     margin-bottom: 27px;
-    //     max-width: 874px;
-    //     width: 100%;
-
-    // }
+  max-width: 805px;
+  padding-left: 48px;
+  padding-bottom: 60px;
+  border-left: 1px solid $border;
+  &__title {
+    margin: 0 0 48px 0;
+    font-family: "Vida 33 Pro";
+    font-size: 36px;
+    color: #414141;
     @include tablet {
-        max-width: 760px;
-        padding: 0;
-        border: none;
-        margin: 0 auto;
-        padding-top: 30px;
+      font-size: 33px;
     }
     @include phone {
-        padding: 0;
-        margin-top: 20px;
-        border: none;
-        padding-bottom: 30px;
+      font-size: 29px;
+      margin-bottom: 22px;
     }
+  }
+  // &__item {
+  //     margin-bottom: 27px;
+  //     max-width: 874px;
+  //     width: 100%;
+
+  // }
+  @include tablet {
+    max-width: 760px;
+    padding: 0;
+    border: none;
+    margin: 0 auto;
+    padding-top: 30px;
+  }
+  @include phone {
+    padding: 0;
+    margin-top: 20px;
+    border: none;
+    padding-bottom: 30px;
+  }
 }
 
 // slider in mobile version
 .news {
-    background-color: #edeeee;
-    &__container {
-        padding: 35px 80px 50px 80px;
-        max-width: 1200px;
-        width: 100%;
-        margin: $margin;
-        @include tablet {
-            padding: 35px 25px 40px;
-        }
-        @include phone {
-            width: auto;
-            padding: 35px 25px 30px;
-        }
-        }
-    &__slider {
-        display: flex;
-        justify-content: space-between;
-        @include phone {
-            max-width: 350px;
-            margin: $margin;
-        }
-       
+  background-color: #edeeee;
+  &__container {
+    padding: 35px 80px 50px 80px;
+    max-width: 1200px;
+    width: 100%;
+    margin: $margin;
+    @include tablet {
+      padding: 35px 25px 40px;
     }
-    &__item {
-        border: none;
-        outline: none;
-        @include phone {
-            position: relative;
-            margin-left: 25px;
-        }
-	    @include desktop {
-            max-width: 227px;
-        }
+    @include phone {
+      width: auto;
+      padding: 35px 25px 30px;
     }
-  
+  }
+  &__slider {
+    display: flex;
+    justify-content: space-between;
+    @include phone {
+      max-width: 350px;
+      margin: $margin;
+    }
+  }
+  &__item {
+    border: none;
+    outline: none;
+    @include phone {
+      position: relative;
+      margin-left: 25px;
+    }
+    @include desktop {
+      max-width: 227px;
+    }
+  }
 }
 
 .annonce {
-    display: flex;
-    align-items: center;
-    position: relative;
-    &__date {
-        flex-basis: 45px;
-        color: #aaaaaa;
+  display: flex;
+  align-items: center;
+  position: relative;
+  &__date {
+    flex-basis: 45px;
+    color: #aaaaaa;
+  }
+  &__title {
+    display: inline-block;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 10px;
+    padding: 3px 5px;
+    background-color: #fff;
+    color: #000;
+    &_first {
+      width: 63px;
+      font-weight: bold;
+      background: url(../images/news_bck.png), no-repeat;
+      text-align: center;
     }
-    &__title {
-        display: inline-block;
-        border: none;
-        outline: none;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 10px;
-        padding: 3px 5px;
-        background-color: #fff;
-        color: #000;
-        &_first {
-            width: 63px;
-            font-weight: bold;
-            background: url(../images/news_bck.png), no-repeat;
-            text-align: center;
-        }
-    }
+  }
 }
 
 .footer {
-    &__container {
-        @extend .container;
-        padding: 52px 80px 40px 80px;
-        display: flex;
-        justify-content: space-between;
-        @include tablet {
-            padding: 20px 100px 25px 30px;
-            width: 100%;
-            max-width: 800px;
-        }
-        @include phone {
-            flex-direction: column;
-            padding: 20px 35px;
-        }
+  &__container {
+    @extend .container;
+    padding: 52px 80px 40px 80px;
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      padding: 20px 100px 25px 30px;
+      width: 100%;
+      max-width: 800px;
     }
-    &__contacts {
-        width: 205px;
+    @include phone {
+      flex-direction: column;
+      padding: 20px 35px;
     }
-    &__social {
-        width: 180px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: space-between;
+  }
+  &__contacts {
+    width: 205px;
+  }
+  &__social {
+    width: 180px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__phone {
+    padding-top: 30px;
+    padding-bottom: 17px;
+    font-family: "Vida 33 Pro";
+    font-size: 24px;
+    color: #424242;
+  }
+  &__mail {
+    text-decoration: none;
+    color: $accent;
+    line-height: 1.5;
+  }
+  &__wrapper {
+    max-width: 698px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include tablet {
+      max-width: 280px;
     }
-    &__phone {
-        padding-top: 30px;
-        padding-bottom: 17px;
-        font-family: "Vida 33 Pro";
-        font-size: 24px;
-        color: #424242;
+    @include phone {
+      flex-direction: column;
     }
-    &__mail {
-        text-decoration: none;
-        color: $accent;
-        line-height: 1.5;
-    }
-    &__wrapper {
-        max-width: 698px;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        @include tablet {
-            max-width: 280px;
-        }
-        @include phone {
-            flex-direction: column;
-        }
-    }
+  }
 }
 
 .division {
-    &__title {
-        margin: 0;
-        font-family: "Vida 33 Pro";
-        padding-bottom: 12px;
-        @include phone {
-            padding-top: 10px;
-            line-height: 1.5;
-            border-bottom: 1px solid $border;
-        }
-        &_last {
-            visibility: hidden;
-        }
-        @include phone {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-    }
-    &__items {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        @include tablet {
-            padding-bottom: 20px;
-        }
-    }
-    &__link {
-        text-decoration: none;
-        line-height: 2.5;
-        color: $accent;
-    }
-    
+  &__title {
+    margin: 0;
+    font-family: "Vida 33 Pro";
+    padding-bottom: 12px;
     @include phone {
-        padding-top: 10px;
+      padding-top: 10px;
+      line-height: 1.5;
+      border-bottom: 1px solid $border;
     }
+    &_last {
+      visibility: hidden;
+    }
+    @include phone {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &__items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include tablet {
+      padding-bottom: 20px;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    line-height: 2.5;
+    color: $accent;
+  }
+
+  @include phone {
+    padding-top: 10px;
+  }
 }
 
 .pointer {
-    @include desktop {
-        display: none;
-    }
+  @include desktop {
+    display: none;
+  }
 }
