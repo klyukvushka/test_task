@@ -85,12 +85,12 @@ body {
     @include phone {
       position: absolute;
       top: 0;
-      padding: 15px 20px 8px;
+      padding: 15px 10px 8px;
     }
   }
   &__logo {
     @include phone {
-      width: 100px;
+      width: 90px;
     }
   }
   &__content {
@@ -255,14 +255,17 @@ body {
 .mobile-menu {
   background-color: #fff;
   z-index: 3;
-  position: absolute;
+  position: fixed;
+  height: 100vh;
   font-size: 19px;
   top: 0;
   right: 0;
-  max-width: 389px;
   width: 100%;
   padding: 28px 21px 30px;
   border-bottom: 1px solid $border;
+  @media screen and (min-width: 641px) and (max-width: 1199px) {
+    width: 50%;
+  }
   &__logo {
     width: 120px;
     @include phone {
@@ -284,6 +287,55 @@ body {
     padding: 0;
     margin: 0;
     padding-top: 22px;
+  }
+  &__btn {
+    @include desktop {
+      display: none;
+    }
+    display: block;
+    width: 26px;
+    height: 35px;
+    position: relative;
+    &_active {
+      z-index: 99;
+      position: fixed;
+      right: 4%;
+      .mobile-menu__span {
+        height: 0;
+        &::before {
+          transform: rotate(45deg);
+          height: 2px;
+        }
+        &:after {
+          transform: rotate(-45deg);
+          height: 2px;
+        }
+      }
+    }
+  }
+  &__span {
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    left: 50%;
+    margin-left: -10px;
+    width: 20px;
+    height: 2px;
+    background-color: #893b67;
+    &:before {
+      @extend .mobile-menu__span;
+      content: "";
+      display: block;
+      transition: 0.2s;
+      transform: translateY(-5px);
+    }
+    &:after {
+      @extend .mobile-menu__span;
+      content: "";
+      display: block;
+      transition: 0.2s;
+      transform: translateY(5px);
+    }
   }
   &__thumbnail {
     width: 20px;
@@ -368,7 +420,7 @@ body {
   }
   @include phone {
     flex-direction: column;
-    padding: 40px 25px 30px;
+    padding: 40px 10px 30px;
     width: auto;
   }
 }
