@@ -1,18 +1,18 @@
-var accordion = (function () {
+var accordion = (function() {
   var $accordion = $(".accordion");
 
   return {
-    handlers: function () {
-      $accordion.on("click", function () {
+    handlers: function() {
+      $accordion.on("click", function() {
         var $this = $(this);
         var $icon = $(".accordion__icon");
-        $this.find(".accordion__content").slideToggle(150, function () {
+        $this.find(".accordion__content").slideToggle(150, function() {
           window.scrollTo(window.scrollX, window.scrollY + 1);
         });
         $this.toggleClass("accordion_active");
       });
     },
-    init: function () {
+    init: function() {
       this.handlers();
     }
   };
@@ -21,20 +21,21 @@ var accordion = (function () {
 accordion.init();
 
 // footer menu
-var windowsize = $(window).width();
-$(window).resize(function () {
-  windowsize = $(window).width();
-  if (windowsize <= 640) {
-    var $block = $(".division__items");
-    $(".division__title").click(function () {
-      $block.toggle();
+(function footerAccordion() {
+  var windowSize = $(window).width();
+  if (windowSize <= 640) {
+    $(".footer__info").click(function() {
+      $(".footer__info")
+        .not(this)
+        .removeClass("active");
+      $(this).toggleClass("active");
     });
   }
-});
+})();
 
 // slider
-$(window).on("load resize orientationchange", function () {
-  $(".news__slider").each(function () {
+$(window).on("load resize orientationchange", function() {
+  $(".news__slider").each(function() {
     var $carousel = $(this);
     /* Initializes a slick carousel only on mobile screens */
     // slick on mobile
@@ -57,15 +58,10 @@ $(window).on("load resize orientationchange", function () {
   });
 });
 
-// $('.mobile-menu__btn').on('click', function (e) {
-//   e.preventDefault;
-
-// });
-
-$(document).ready(function ($) {
+$(document).ready(function($) {
   $(".mobile-menu").hide();
-  $(".mobile-menu__btn").on("click", function () {
+  $(".mobile-menu__btn").on("click", function() {
     $(".mobile-menu").slideToggle();
-    $(this).toggleClass('mobile-menu__btn_active');
+    $(this).toggleClass("mobile-menu__btn_active");
   });
 });
